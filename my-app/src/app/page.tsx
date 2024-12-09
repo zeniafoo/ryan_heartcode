@@ -23,7 +23,7 @@ export default function Home() {
           Escape the fake high, Reach real heights
         </div>
         <div className="font-extralight text-base md:text-4xl dark:text-neutral-200 py-4">
-          Hi im Ryan
+          dont do drugs
         </div>
         </div>
       </motion.div>
