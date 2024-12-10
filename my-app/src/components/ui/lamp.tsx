@@ -15,9 +15,9 @@ export const LampContainer: React.FC<LampContainerProps> = ({
   ...props
 }) => {
   return (
-    <div
+    (<div
       className={cn(
-        "relative flex min-h-screen flex-col items-center justify-center overflow-hidden bg-slate-950 w-full rounded-md z-0",
+        "relative flex h-fit flex-col items-center justify-center overflow-hidden bg-slate-950 w-full rounded-md z-0",
         className
       )}
       {...props} // Spread any additional props onto the div
@@ -56,9 +56,12 @@ export const LampContainer: React.FC<LampContainerProps> = ({
           <div className="absolute w-40 h-full right-0 bg-slate-950 bottom-0 z-20 [mask-image:linear-gradient(to_left,white,transparent)]" />
           <div className="absolute w-full right-0 bg-slate-950 h-40 bottom-0 z-20 [mask-image:linear-gradient(to_top,white,transparent)]" />
         </motion.div>
-        <div className="absolute top-1/2 h-48 w-full translate-y-12 scale-x-150 bg-slate-950 blur-2xl"></div>
-        <div className="absolute top-1/2 z-50 h-48 w-full bg-transparent opacity-10 backdrop-blur-md"></div>
-        <div className="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-1/2 rounded-full bg-cyan-500 opacity-50 blur-3xl"></div>
+        <div
+          className="absolute top-1/2 h-48 w-full translate-y-12 scale-x-150 bg-slate-950 blur-2xl"></div>
+        <div
+          className="absolute top-1/2 z-50 h-48 w-full bg-transparent opacity-10 backdrop-blur-md"></div>
+        <div
+          className="absolute inset-auto z-50 h-36 w-[28rem] -translate-y-1/2 rounded-full bg-cyan-500 opacity-50 blur-3xl"></div>
         <motion.div
           initial={{ width: "8rem" }}
           whileInView={{ width: "16rem" }}
@@ -67,8 +70,7 @@ export const LampContainer: React.FC<LampContainerProps> = ({
             duration: 0.8,
             ease: "easeInOut",
           }}
-          className="absolute inset-auto z-30 h-36 w-64 -translate-y-[6rem] rounded-full bg-cyan-400 blur-2xl"
-        ></motion.div>
+          className="absolute inset-auto z-30 h-36 w-64 -translate-y-[6rem] rounded-full bg-cyan-400 blur-2xl"></motion.div>
         <motion.div
           initial={{ width: "15rem" }}
           whileInView={{ width: "30rem" }}
@@ -77,15 +79,14 @@ export const LampContainer: React.FC<LampContainerProps> = ({
             duration: 0.8,
             ease: "easeInOut",
           }}
-          className="absolute inset-auto z-50 h-0.5 w-[30rem] -translate-y-[7rem] bg-cyan-400 "
-        ></motion.div>
+          className="absolute inset-auto z-50 h-0.5 w-[30rem] -translate-y-[7rem] bg-cyan-400 "></motion.div>
 
-        <div className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-slate-950 "></div>
+        <div
+          className="absolute inset-auto z-40 h-44 w-full -translate-y-[12.5rem] bg-slate-950 "></div>
       </div>
-
       <div className="relative z-50 flex -translate-y-80 flex-col items-center px-5">
         {children}
       </div>
-    </div>
+    </div>)
   );
 };
