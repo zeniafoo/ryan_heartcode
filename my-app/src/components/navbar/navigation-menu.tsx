@@ -31,10 +31,16 @@ export function NavigationBar() {
                     </NavigationMenuLink>
                 </Link>
             </NavigationMenuItem>
+            <NavigationMenuItem>
+                <Link href="/quiz" legacyBehavior passHref>
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        Quiz
+                    </NavigationMenuLink>
+                </Link>
+            </NavigationMenuItem>
             </div>
             <div className="flex gap-4">
                 <ModeToggle/>
-                
             </div>
         </NavigationMenu>
     )
