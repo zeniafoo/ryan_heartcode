@@ -38,6 +38,13 @@ export function NavigationBar() {
                 </Link>
             </NavigationMenuItem>
             <NavigationMenuItem>
+                <Link href="/notes" legacyBehavior passHref>
+                    <NavigationMenuLink className={navigationMenuTriggerStyle()}>
+                        Notes
+                    </NavigationMenuLink>
+                </Link>
+            </NavigationMenuItem>
+            <NavigationMenuItem>
                 <Link href="/quiz" legacyBehavior passHref>
                     <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                         Quiz

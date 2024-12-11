@@ -220,7 +220,7 @@ export default function Quiz() {
   										</div>
   										<div className="flex items-center space-x-2">
     										<RadioGroupItem value="option-four" id="option-four" />
-    										<Label htmlFor="option-one">18th Century</Label>
+    										<Label htmlFor="option-one">There is no set date</Label>
   										</div>
 									</RadioGroup>
                             	</FormControl>
