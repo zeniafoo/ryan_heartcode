@@ -7,8 +7,10 @@ import { Form, FormControl, FormDescription, FormField, FormItem, FormLabel, For
 import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
+import { Label } from "@/components/ui/label"
+import { RadioGroup, RadioGroupItem } from "@/components/ui/radio-group"
 import { useToast } from "@/hooks/use-toast";
-import { insertOneUser } from "@/app/server/user";
+import { insertOneUser } from "../../server/user";
 
 const FormSchema = z.object({
 	name: z.string({
@@ -83,6 +85,176 @@ export default function Quiz() {
                                 	<SelectItem value="no">No</SelectItem>
                             	</SelectContent>
                         	</Select>
+                        	<FormMessage/>
+                    	</FormItem>
+                	)}
+            	/>
+				<FormField
+                	control={form.control}
+                	name="name"
+                	render={({ field }) => (
+                    	<FormItem>
+                        	<FormLabel>Question 3:</FormLabel>
+                        	<FormDescription>Is there good drugs and bad drugs?</FormDescription>
+                            	<FormControl>
+									<RadioGroup defaultValue="option-one">
+  										<div className="flex items-center space-x-2">
+    										<RadioGroupItem value="option-one" id="option-one" />
+    										<Label htmlFor="option-one">Yes</Label>
+  										</div>
+  										<div className="flex items-center space-x-2">
+    										<RadioGroupItem value="option-two" id="option-two" />
+    										<Label htmlFor="option-two">No</Label>
+  										</div>
+									</RadioGroup>
+                            	</FormControl>
+                        	<FormMessage/>
+                    	</FormItem>
+                	)}
+            	/>
+				<FormField
+                	control={form.control}
+                	name="name"
+                	render={({ field }) => (
+                    	<FormItem>
+                        	<FormLabel>Question 4:</FormLabel>
+                        	<FormDescription>When do drug side effects usually occur?</FormDescription>
+                            	<FormControl>
+									<RadioGroup defaultValue="option-one">
+  										<div className="flex items-center space-x-2">
+    										<RadioGroupItem value="option-one" id="option-one" />
+    										<Label htmlFor="option-one">At any time</Label>
+  										</div>
+  										<div className="flex items-center space-x-2">
+    										<RadioGroupItem value="option-two" id="option-two" />
+    										<Label htmlFor="option-two">Immediatelely</Label>
+  										</div>
+  										<div className="flex items-center space-x-2">
+    										<RadioGroupItem value="option-three" id="option-three" />
+    										<Label htmlFor="option-one">After 30 minutes</Label>
+  										</div>
+  										<div className="flex items-center space-x-2">
+    										<RadioGroupItem value="option-four" id="option-four" />
+    										<Label htmlFor="option-one">After one hour</Label>
+  										</div>
+									</RadioGroup>
+                            	</FormControl>
+                        	<FormMessage/>
+                    	</FormItem>
+                	)}
+            	/>
+				<FormField
+                	control={form.control}
+                	name="name"
+                	render={({ field }) => (
+                    	<FormItem>
+                        	<FormLabel>Question 5:</FormLabel>
+                        	<FormDescription>Does cigarette and vape contain drugs?</FormDescription>
+                            	<FormControl>
+									<RadioGroup defaultValue="option-one">
+  										<div className="flex items-center space-x-2">
+    										<RadioGroupItem value="option-one" id="option-one" />
+    										<Label htmlFor="option-one">Yes</Label>
+  										</div>
+  										<div className="flex items-center space-x-2">
+    										<RadioGroupItem value="option-two" id="option-two" />
+    										<Label htmlFor="option-two">No</Label>
+  										</div>
+									</RadioGroup>
+                            	</FormControl>
+                        	<FormMessage/>
+                    	</FormItem>
+                	)}
+            	/>
+				<FormField
+                	control={form.control}
+                	name="name"
+                	render={({ field }) => (
+                    	<FormItem>
+                        	<FormLabel>Question 6:</FormLabel>
+                        	<FormDescription>What is the stimulant drug found in tobacco products?</FormDescription>
+                            	<FormControl>
+									<RadioGroup defaultValue="option-one">
+  										<div className="flex items-center space-x-2">
+    										<RadioGroupItem value="option-one" id="option-one" />
+    										<Label htmlFor="option-one">Nicotine</Label>
+  										</div>
+  										<div className="flex items-center space-x-2">
+    										<RadioGroupItem value="option-two" id="option-two" />
+    										<Label htmlFor="option-two">Heroin</Label>
+  										</div>
+  										<div className="flex items-center space-x-2">
+    										<RadioGroupItem value="option-three" id="option-three" />
+    										<Label htmlFor="option-one">Ice</Label>
+  										</div>
+  										<div className="flex items-center space-x-2">
+    										<RadioGroupItem value="option-four" id="option-four" />
+    										<Label htmlFor="option-one">Cannabis</Label>
+  										</div>
+									</RadioGroup>
+                            	</FormControl>
+                        	<FormMessage/>
+                    	</FormItem>
+                	)}
+            	/>
+				<FormField
+                	control={form.control}
+                	name="name"
+                	render={({ field }) => (
+                    	<FormItem>
+                        	<FormLabel>Question 7:</FormLabel>
+                        	<FormDescription>When was the first drug invented?</FormDescription>
+                            	<FormControl>
+									<RadioGroup defaultValue="option-one">
+  										<div className="flex items-center space-x-2">
+    										<RadioGroupItem value="option-one" id="option-one" />
+    										<Label htmlFor="option-one">6th Century</Label>
+  										</div>
+  										<div className="flex items-center space-x-2">
+    										<RadioGroupItem value="option-two" id="option-two" />
+    										<Label htmlFor="option-two">10th Century</Label>
+  										</div>
+  										<div className="flex items-center space-x-2">
+    										<RadioGroupItem value="option-three" id="option-three" />
+    										<Label htmlFor="option-one">14th Century</Label>
+  										</div>
+  										<div className="flex items-center space-x-2">
+    										<RadioGroupItem value="option-four" id="option-four" />
+    										<Label htmlFor="option-one">18th Century</Label>
+  										</div>
+									</RadioGroup>
+                            	</FormControl>
+                        	<FormMessage/>
+                    	</FormItem>
+                	)}
+            	/>
+								<FormField
+                	control={form.control}
+                	name="name"
+                	render={({ field }) => (
+                    	<FormItem>
+                        	<FormLabel>Question 8:</FormLabel>
+                        	<FormDescription>What is the internal use of a drug without medical/health reasons?</FormDescription>
+                            	<FormControl>
+									<RadioGroup defaultValue="option-one">
+  										<div className="flex items-center space-x-2">
+    										<RadioGroupItem value="option-one" id="option-one" />
+    										<Label htmlFor="option-one">Drug Abuse</Label>
+  										</div>
+  										<div className="flex items-center space-x-2">
+    										<RadioGroupItem value="option-two" id="option-two" />
+    										<Label htmlFor="option-two">Drug Trafficking</Label>
+  										</div>
+  										<div className="flex items-center space-x-2">
+    										<RadioGroupItem value="option-three" id="option-three" />
+    										<Label htmlFor="option-one">Drug User</Label>
+  										</div>
+  										<div className="flex items-center space-x-2">
+    										<RadioGroupItem value="option-four" id="option-four" />
+    										<Label htmlFor="option-one">Drug Dealer</Label>
+  										</div>
+									</RadioGroup>
+                            	</FormControl>
                         	<FormMessage/>
                     	</FormItem>
                 	)}
