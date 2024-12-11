@@ -8,5 +8,15 @@ export function ThemeProvider({
   children,
   ...props
 }: React.ComponentProps<typeof NextThemesProvider>) {
-  return <NextThemesProvider {...props}>{children}</NextThemesProvider>
+  return (
+    <NextThemesProvider
+      themes={["light", "dark", "christmas"]}
+      attribute="class"
+      defaultTheme="system"
+      storageKey="theme" // Customize storage key if needed
+      {...props}
+    >
+      {children}
+    </NextThemesProvider>
+  )
 }
