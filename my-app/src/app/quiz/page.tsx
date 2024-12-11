@@ -20,39 +20,65 @@ const FormSchema = z.object({
 	}).max(20, {
     	message: "name must be no longer than 20 characters"
 	}),
-	question1: z.string({
+	question2: z.string({
     	required_error: "Please select an option"
-	})
-})
+	}),
+	question3: z.string(),
+	question4: z.string(),
+	question5: z.string(),
+	question6: z.string(),
+	question7: z.string(),
+	question8: z.string(),
+});
+
+const correctAnswers = {
+	question2: "no",
+	question3: "option-one",
+	question4: "option-one",
+	question5: "option-one",
+	question6: "option-one",
+	question7: "option-four",
+	question8: "option-one",
+  };
+  
 
 export default function Quiz() {
 	const { toast } = useToast();
 
 	const form = useForm<z.infer<typeof FormSchema>>({
-    	resolver: zodResolver(FormSchema)
-	})
+		resolver: zodResolver(FormSchema),
+		defaultValues: {
+		  name: "",
+		  question2: "",
+		  question3: "",
+		  question4: "",
+		  question5: "",
+		  question6: "",
+		  question7: "",
+		  question8: "",
+		},
+	  });
 
   async function onSubmit(data: z.infer<typeof FormSchema>) {
-    if (data.question1 === "yes") {
-        toast({
-            title: `Congratulations ${data.name}`,
-            description: "You are a drug dealer",
-        })
-    } else {
-        toast({
-            title: `Thank you ${data.name}`,
-            description: "Unfortunately you are not a drug dealer",
-        })
-    }
+	let score = 0;
 
-	const isDrugDealer = true ? data.question1 === "yes" : false;
-	await insertOneUser(data.name, isDrugDealer);
-  }
+	for (const [question, correctAnswer] of Object.entries(correctAnswers)) {
+		if (data[question as keyof typeof data] === correctAnswer) {
+		  score += 1;
+		}
+	  }
 
+	  toast({
+		title: `Congratulations ${data.name}`,
+		description: `Your score is ${score}/${Object.keys(correctAnswers).length}!`,
+	  });
+	}
+  
 
 	return (
     	<Form {...form}>
         	<form onSubmit={form.handleSubmit(onSubmit)} className="w2/3 space-y-6">
+				{/* question 1 */}
             	<FormField
                 	control={form.control}
                 	name="name"
@@ -67,9 +93,11 @@ export default function Quiz() {
                     	</FormItem>
                 	)}
             	/>
+
+				{/* question 2 */}
             	<FormField
                 	control={form.control}
-                	name="question1"
+                	name="question2"
                 	render={({ field }) => (
                     	<FormItem>
                         	<FormLabel>Question 2:</FormLabel>
@@ -80,24 +108,26 @@ export default function Quiz() {
                                     	<SelectValue placeholder="Please select an answer"/>
                                 	</SelectTrigger>
                             	</FormControl>
-                            	<SelectContent>
-                                	<SelectItem value="yes">Yes</SelectItem>
-                                	<SelectItem value="no">No</SelectItem>
+                            	<SelectContent className="bg-black">
+                                	<SelectItem value="yes" className="hover:bg-slate-800">Yes</SelectItem>
+                                	<SelectItem value="no" className="hover:bg-slate-800">No</SelectItem>
                             	</SelectContent>
                         	</Select>
                         	<FormMessage/>
                     	</FormItem>
                 	)}
             	/>
+				{/* remaining questions */}
+				{/* question 3 */}
 				<FormField
                 	control={form.control}
-                	name="name"
+                	name="question3"
                 	render={({ field }) => (
                     	<FormItem>
                         	<FormLabel>Question 3:</FormLabel>
-                        	<FormDescription>Is there good drugs and bad drugs?</FormDescription>
+                        	<FormDescription>Are there good drugs and bad drugs?</FormDescription>
                             	<FormControl>
-									<RadioGroup defaultValue="option-one">
+									<RadioGroup onValueChange={field.onChange} value={field.value}>
   										<div className="flex items-center space-x-2">
     										<RadioGroupItem value="option-one" id="option-one" />
     										<Label htmlFor="option-one">Yes</Label>
@@ -114,13 +144,13 @@ export default function Quiz() {
             	/>
 				<FormField
                 	control={form.control}
-                	name="name"
+                	name="question4"
                 	render={({ field }) => (
                     	<FormItem>
                         	<FormLabel>Question 4:</FormLabel>
                         	<FormDescription>When do drug side effects usually occur?</FormDescription>
                             	<FormControl>
-									<RadioGroup defaultValue="option-one">
+									<RadioGroup onValueChange={field.onChange} value={field.value}>
   										<div className="flex items-center space-x-2">
     										<RadioGroupItem value="option-one" id="option-one" />
     										<Label htmlFor="option-one">At any time</Label>
@@ -145,13 +175,13 @@ export default function Quiz() {
             	/>
 				<FormField
                 	control={form.control}
-                	name="name"
+                	name="question5"
                 	render={({ field }) => (
                     	<FormItem>
                         	<FormLabel>Question 5:</FormLabel>
                         	<FormDescription>Does cigarette and vape contain drugs?</FormDescription>
                             	<FormControl>
-									<RadioGroup defaultValue="option-one">
+									<RadioGroup onValueChange={field.onChange} value={field.value}>
   										<div className="flex items-center space-x-2">
     										<RadioGroupItem value="option-one" id="option-one" />
     										<Label htmlFor="option-one">Yes</Label>
@@ -168,13 +198,13 @@ export default function Quiz() {
             	/>
 				<FormField
                 	control={form.control}
-                	name="name"
+                	name="question6"
                 	render={({ field }) => (
                     	<FormItem>
                         	<FormLabel>Question 6:</FormLabel>
                         	<FormDescription>What is the stimulant drug found in tobacco products?</FormDescription>
                             	<FormControl>
-									<RadioGroup defaultValue="option-one">
+									<RadioGroup onValueChange={field.onChange} value={field.value}>
   										<div className="flex items-center space-x-2">
     										<RadioGroupItem value="option-one" id="option-one" />
     										<Label htmlFor="option-one">Nicotine</Label>
@@ -199,13 +229,13 @@ export default function Quiz() {
             	/>
 				<FormField
                 	control={form.control}
-                	name="name"
+                	name="question7"
                 	render={({ field }) => (
                     	<FormItem>
                         	<FormLabel>Question 7:</FormLabel>
                         	<FormDescription>When was the first drug invented?</FormDescription>
                             	<FormControl>
-									<RadioGroup defaultValue="option-one">
+									<RadioGroup onValueChange={field.onChange} value={field.value}>
   										<div className="flex items-center space-x-2">
     										<RadioGroupItem value="option-one" id="option-one" />
     										<Label htmlFor="option-one">6th Century</Label>
@@ -220,7 +250,7 @@ export default function Quiz() {
   										</div>
   										<div className="flex items-center space-x-2">
     										<RadioGroupItem value="option-four" id="option-four" />
-    										<Label htmlFor="option-one">There is no set date</Label>
+    										<Label htmlFor="option-one">There is no set date.</Label>
   										</div>
 									</RadioGroup>
                             	</FormControl>
@@ -230,13 +260,13 @@ export default function Quiz() {
             	/>
 								<FormField
                 	control={form.control}
-                	name="name"
+                	name="question8"
                 	render={({ field }) => (
                     	<FormItem>
                         	<FormLabel>Question 8:</FormLabel>
                         	<FormDescription>What is the internal use of a drug without medical/health reasons?</FormDescription>
                             	<FormControl>
-									<RadioGroup defaultValue="option-one">
+									<RadioGroup onValueChange={field.onChange} value={field.value}>
   										<div className="flex items-center space-x-2">
     										<RadioGroupItem value="option-one" id="option-one" />
     										<Label htmlFor="option-one">Drug Abuse</Label>
