@@ -95,7 +95,7 @@ export default function aboutryan(){
                             </button>
                     
                             {/* Meaty part - Meteor effect */}
-                            <Meteors number={20} />
+                            <Meteors number={20} className={""}/>
                             </div>
                         </div>
                     </div>

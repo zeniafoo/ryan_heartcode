@@ -8,7 +8,7 @@ import { Button } from "@/components/ui/button";
 import { Select, SelectContent, SelectItem, SelectTrigger, SelectValue } from "@/components/ui/select";
 import { Input } from "@/components/ui/input";
 import { useToast } from "@/hooks/use-toast";
-import { insertOneUser } from "@/server/user";
+import { insertOneUser } from "@/app/server/user";
 
 const FormSchema = z.object({
 	name: z.string({
