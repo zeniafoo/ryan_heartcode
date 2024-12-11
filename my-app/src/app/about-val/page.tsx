@@ -53,11 +53,11 @@ export default function Home() {
             className="bg-clip-text text-4xl font-medium tracking-tight text-transparent md:text-7xl h-auto mt-44">
           
             <div className="flex flex-col items-center justify-center h-[40rem] m-2">
-              <div className="text-8xl font-bold mt-96 text-white p-58 text-center">
+              <div className="text-7xl font-bold mt-80 text-white pt-96 pb-0 text-center">
                 Hi, I am <br /> Valerie
               </div>
               
-              <div className="pt-2 size-100">
+              <div className="pt-0 size-100">
                 <img src="/sofaimage.png" alt="Sofa"/>
               </div>
             </div>
