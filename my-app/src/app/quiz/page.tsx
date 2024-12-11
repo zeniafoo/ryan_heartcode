@@ -46,8 +46,18 @@ export default function Quiz() {
 	const { toast } = useToast();
 
 	const form = useForm<z.infer<typeof FormSchema>>({
-    	resolver: zodResolver(FormSchema)
-	})
+		resolver: zodResolver(FormSchema),
+		defaultValues: {
+		  name: "",
+		  question2: "",
+		  question3: "",
+		  question4: "",
+		  question5: "",
+		  question6: "",
+		  question7: "",
+		  question8: "",
+		},
+	  });
 
   async function onSubmit(data: z.infer<typeof FormSchema>) {
 	let score = 0;
