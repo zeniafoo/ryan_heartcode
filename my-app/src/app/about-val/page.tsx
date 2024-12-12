@@ -12,7 +12,7 @@ export default function Home() {
         "Someone who likes to code😊, hates drugs and is going to talk about drugs",
       name: "Valerie",
       designation: "Mentee",
-      src: '/womanimage.jpg',
+      src: "/womanimage.jpg",
     },
     {
       quote:
@@ -30,40 +30,29 @@ export default function Home() {
     },
   ];
 
-  // Scroll to bottom function
-  const scrollToBottom = () => {
-    window.scrollTo({
-      top: document.documentElement.scrollHeight,
-      behavior: "smooth",
-    });
-  };
-
   return (
-    <div>
+    <div className="text-foreground">
       <LampContainer>
-        {/* Wrapping h1 and image in a parent div for better structure */}
-        
-          <motion.h1
-            initial={{ opacity: 0.5, y: 100 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{
-              delay: 0.3,
-              duration: 0.8,
-              ease: "easeInOut",
-            }}
-            className="bg-clip-text text-4xl font-medium tracking-tight text-transparent md:text-7xl h-auto mt-44">
-          
-            <div className="flex flex-col items-center justify-center h-[40rem] m-2">
-              <div className="text-7xl font-bold mt-80 text-white pt-96 pb-0 text-center">
-                Hi, I am <br /> Valerie
-              </div>
-              
-              <div className="pt-0 size-100">
-                <img src="/sofaimage.png" alt="Sofa"/>
-              </div>
+        <motion.h1
+          initial={{ opacity: 0.5, y: 100 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{
+            delay: 0.3,
+            duration: 0.8,
+            ease: "easeInOut",
+          }}
+          className="bg-clip-text text-4xl font-medium tracking-tight text-transparent md:text-7xl h-auto mt-44"
+        >
+          <div className="flex flex-col items-center justify-center h-[40rem] m-2">
+            <div className="text-7xl font-bold mt-80 text-white pt-96 pb-0 text-center">
+              Hi, I am <br /> Valerie
             </div>
-          </motion.h1>
-        
+
+            <div className="pt-0 size-100">
+              <img src="/sofaimage.png" alt="Sofa" />
+            </div>
+          </div>
+        </motion.h1>
       </LampContainer>
       <AnimatedTestimonials testimonials={testimonials} />
       <div className="bg-black text-white py-12">
@@ -72,4 +61,3 @@ export default function Home() {
     </div>
   );
 }
-

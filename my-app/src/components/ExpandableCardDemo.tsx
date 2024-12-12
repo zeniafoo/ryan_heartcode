@@ -4,6 +4,7 @@ import Image from "next/image";
 import React, { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { useOutsideClick } from "@/hooks/use-outside-click";
+import { useTheme } from "next-themes"; // Import useTheme for dynamic theme detection
 import CloseIcon from "./CloseIcon"; // Adjust the path if necessary
 
 const cards = [
@@ -55,6 +56,7 @@ const cards = [
 ];
 
 const ExpandableCardDemo = () => {
+  const { theme } = useTheme(); // Get the current theme
   const [active, setActive] = useState<typeof cards[number] | null>(null);
   const ref = useRef<HTMLDivElement>(null);
   const id = useId();
@@ -80,6 +82,9 @@ const ExpandableCardDemo = () => {
   }, [active]);
 
   useOutsideClick(ref, () => setActive(null));
+
+  const hoverClass =
+    theme === "christmas" ? "hover:bg-red-500 hover:text-white" : "hover:bg-neutral-50 dark:hover:bg-neutral-800";
 
   return (
     <>
@@ -173,7 +178,7 @@ const ExpandableCardDemo = () => {
             layoutId={`card-${card.title}-${id}`}
             key={`card-${card.title}-${id}`}
             onClick={() => setActive(card)}
-            className="p-4 flex flex-col md:flex-row justify-between items-center hover:bg-neutral-50 dark:hover:bg-neutral-800 rounded-xl cursor-pointer"
+            className={`p-4 flex flex-col md:flex-row justify-between items-center ${hoverClass} rounded-xl cursor-pointer`}
           >
             <div className="flex gap-4 flex-col md:flex-row">
               <motion.div layoutId={`image-${card.title}-${id}`}>
@@ -188,7 +193,7 @@ const ExpandableCardDemo = () => {
               <div>
                 <motion.h3
                   layoutId={`title-${card.title}-${id}`}
-                  className="font-medium text-neutral-800 dark:text-neutral-200 text-center md:text-left"
+                  className="font-medium text-foreground text-center md:text-left"
                 >
                   {card.title}
                 </motion.h3>

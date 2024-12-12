@@ -147,7 +147,10 @@ export const TetrisGame: React.FC = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-gray-800 text-white">
-      <h1 className="text-4xl font-bold mb-4">Tetris</h1>
+      <h1 className="text-4xl font-bold mb-2">Tetris</h1>
+        <p className='text-sm'>
+        Please use arrow keys to move the blocks!
+        </p>
       <div className="border-4 border-gray-600 p-2 bg-gray-900">
         {renderBoard()}
       </div>

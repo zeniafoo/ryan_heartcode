@@ -113,6 +113,9 @@ export default function aboutryan(){
             </div>
 
             <div>
+              <div className="text-4xl font-bold text-center">
+                Here's a game i like to play!
+              </div>
             <main className="flex min-h-screen flex-col items-center justify-between p-24">
               <TetrisGame />
             </main>
