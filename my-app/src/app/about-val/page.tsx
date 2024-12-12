@@ -3,6 +3,7 @@ import React from "react";
 import { AnimatedTestimonials } from "@/components/ui/animated-testimonials";
 import { motion } from "framer-motion";
 import { LampContainer } from "@/components/ui/lamp";
+import SnakeGame from '@/components/snake-game'
 
 export default function Home() {
   const testimonials = [
@@ -65,6 +66,10 @@ export default function Home() {
         
       </LampContainer>
       <AnimatedTestimonials testimonials={testimonials} />
+      <div className="bg-black text-white py-12">
+        <SnakeGame />
+      </div>
     </div>
   );
 }
+
