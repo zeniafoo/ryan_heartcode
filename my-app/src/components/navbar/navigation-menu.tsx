@@ -13,7 +13,7 @@ import {
 
 export function NavigationBar() {
     return (
-        <NavigationMenu className="flex flex-row justify-between min-w-full list-none h-16 sticky top-0 p-5">
+        <NavigationMenu className="flex flex-row justify-between min-w-full list-none h-16 sticky top-0 p-5 bg">
             <div className="flex flex-row">
             
             <NavigationMenuItem>

@@ -7,6 +7,7 @@ import { motion } from "framer-motion";
 import { LampContainer } from "../../components/ui/lamp";
 import Image from "next/image";
 import { Carousel, Card } from "@/components/ui/apple-cards-carousel";
+import { TetrisGame } from '../../components/TetrisGame';
 
 export default function aboutryan(){
     const cards = data.map((card, index) => (
@@ -104,12 +105,18 @@ export default function aboutryan(){
             </motion.h1>
             </LampContainer>
             <div className="py-20">
-                    <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
-                        Get to know my sport
-                        
-                    </h2>
-                    <Carousel items={cards} />
-                    </div>
+              <h2 className="max-w-7xl pl-4 mx-auto text-xl md:text-5xl font-bold text-neutral-800 dark:text-neutral-200 font-sans">
+                  Get to know my sport
+                  
+              </h2>
+              <Carousel items={cards} />
+            </div>
+
+            <div>
+            <main className="flex min-h-screen flex-col items-center justify-between p-24">
+              <TetrisGame />
+            </main>
+            </div>
         </div>
       );
 }
