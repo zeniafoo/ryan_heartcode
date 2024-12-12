@@ -74,6 +74,32 @@ export default function Quiz() {
 	  });
 	}
   
+	const StarRadioButton = ({ id, value, label, field }: any) => (
+		<label className="relative flex items-center cursor-pointer">
+		  <input
+			type="radio"
+			id={id}
+			value={value}
+			{...field}
+			className="sr-only peer"
+		  />
+		  <svg
+			xmlns="http://www.w3.org/2000/svg"
+			fill="none"
+			viewBox="0 0 24 24"
+			strokeWidth="2"
+			stroke="currentColor"
+			className="w-6 h-6 text-gray-400 peer-checked:text-yellow-500 transition"
+		  >
+			<path
+			  strokeLinecap="round"
+			  strokeLinejoin="round"
+			  d="M12 2l3.09 6.26L22 9.27l-5 4.87L18.18 22 12 18.77 5.82 22 7 14.14l-5-4.87 6.91-1.01L12 2z"
+			/>
+		  </svg>
+		  <span className="text-sm">{label}</span>
+		</label>
+	  );
 
 	return (
     	<Form {...form}>
@@ -108,9 +134,9 @@ export default function Quiz() {
                                     	<SelectValue placeholder="Please select an answer"/>
                                 	</SelectTrigger>
                             	</FormControl>
-                            	<SelectContent className="bg-black">
-                                	<SelectItem value="yes" className="hover:bg-slate-800">Yes</SelectItem>
-                                	<SelectItem value="no" className="hover:bg-slate-800">No</SelectItem>
+                            	<SelectContent >
+                                	<SelectItem value="yes">Yes</SelectItem>
+                                	<SelectItem value="no">No</SelectItem>
                             	</SelectContent>
                         	</Select>
                         	<FormMessage/>
@@ -127,16 +153,20 @@ export default function Quiz() {
                         	<FormLabel>Question 3:</FormLabel>
                         	<FormDescription>Are there good drugs and bad drugs?</FormDescription>
                             	<FormControl>
-									<RadioGroup onValueChange={field.onChange} value={field.value}>
-  										<div className="flex items-center space-x-2">
-    										<RadioGroupItem value="option-one" id="option-one" />
-    										<Label htmlFor="option-one">Yes</Label>
-  										</div>
-  										<div className="flex items-center space-x-2">
-    										<RadioGroupItem value="option-two" id="option-two" />
-    										<Label htmlFor="option-two">No</Label>
-  										</div>
-									</RadioGroup>
+								<div className="space-y-2">
+								<StarRadioButton
+									id="question3-option-one"
+									value="option-one"
+									label="Yes"
+									field={field}
+								/>
+								<StarRadioButton
+									id="question3-option-two"
+									value="option-two"
+									label="No"
+									field={field}
+								/>
+								</div>
                             	</FormControl>
                         	<FormMessage/>
                     	</FormItem>
@@ -150,24 +180,32 @@ export default function Quiz() {
                         	<FormLabel>Question 4:</FormLabel>
                         	<FormDescription>When do drug side effects usually occur?</FormDescription>
                             	<FormControl>
-									<RadioGroup onValueChange={field.onChange} value={field.value}>
-  										<div className="flex items-center space-x-2">
-    										<RadioGroupItem value="option-one" id="option-one" />
-    										<Label htmlFor="option-one">At any time</Label>
-  										</div>
-  										<div className="flex items-center space-x-2">
-    										<RadioGroupItem value="option-two" id="option-two" />
-    										<Label htmlFor="option-two">Immediatelely</Label>
-  										</div>
-  										<div className="flex items-center space-x-2">
-    										<RadioGroupItem value="option-three" id="option-three" />
-    										<Label htmlFor="option-one">After 30 minutes</Label>
-  										</div>
-  										<div className="flex items-center space-x-2">
-    										<RadioGroupItem value="option-four" id="option-four" />
-    										<Label htmlFor="option-one">After one hour</Label>
-  										</div>
-									</RadioGroup>
+								<div className="space-y-2">
+									<StarRadioButton
+										id="question4-option-one"
+										value="option-one"
+										label="At any time"
+										field={field}
+									/>
+									<StarRadioButton
+										id="question4-option-two"
+										value="option-two"
+										label="Immediately"
+										field={field}
+									/>
+									<StarRadioButton
+										id="question4-option-three"
+										value="option-three"
+										label="After 30 minutes"
+										field={field}
+									/>
+									<StarRadioButton
+										id="question4-option-four"
+										value="option-four"
+										label="After one hour"
+										field={field}
+									/>
+									</div>
                             	</FormControl>
                         	<FormMessage/>
                     	</FormItem>
@@ -181,16 +219,20 @@ export default function Quiz() {
                         	<FormLabel>Question 5:</FormLabel>
                         	<FormDescription>Does cigarette and vape contain drugs?</FormDescription>
                             	<FormControl>
-									<RadioGroup onValueChange={field.onChange} value={field.value}>
-  										<div className="flex items-center space-x-2">
-    										<RadioGroupItem value="option-one" id="option-one" />
-    										<Label htmlFor="option-one">Yes</Label>
-  										</div>
-  										<div className="flex items-center space-x-2">
-    										<RadioGroupItem value="option-two" id="option-two" />
-    										<Label htmlFor="option-two">No</Label>
-  										</div>
-									</RadioGroup>
+								<div className="space-y-2">
+								<StarRadioButton
+									id="question5-option-one"
+									value="option-one"
+									label="Yes"
+									field={field}
+								/>
+								<StarRadioButton
+									id="question5-option-two"
+									value="option-two"
+									label="No"
+									field={field}
+								/>
+								</div>
                             	</FormControl>
                         	<FormMessage/>
                     	</FormItem>
@@ -204,24 +246,32 @@ export default function Quiz() {
                         	<FormLabel>Question 6:</FormLabel>
                         	<FormDescription>What is the stimulant drug found in tobacco products?</FormDescription>
                             	<FormControl>
-									<RadioGroup onValueChange={field.onChange} value={field.value}>
-  										<div className="flex items-center space-x-2">
-    										<RadioGroupItem value="option-one" id="option-one" />
-    										<Label htmlFor="option-one">Nicotine</Label>
-  										</div>
-  										<div className="flex items-center space-x-2">
-    										<RadioGroupItem value="option-two" id="option-two" />
-    										<Label htmlFor="option-two">Heroin</Label>
-  										</div>
-  										<div className="flex items-center space-x-2">
-    										<RadioGroupItem value="option-three" id="option-three" />
-    										<Label htmlFor="option-one">Ice</Label>
-  										</div>
-  										<div className="flex items-center space-x-2">
-    										<RadioGroupItem value="option-four" id="option-four" />
-    										<Label htmlFor="option-one">Cannabis</Label>
-  										</div>
-									</RadioGroup>
+								<div className="space-y-2">
+									<StarRadioButton
+										id="question6-option-one"
+										value="option-one"
+										label="Nicotine"
+										field={field}
+									/>
+									<StarRadioButton
+										id="question6-option-two"
+										value="option-two"
+										label="Heroin"
+										field={field}
+									/>
+									<StarRadioButton
+										id="question6-option-three"
+										value="option-three"
+										label="Ice"
+										field={field}
+									/>
+									<StarRadioButton
+										id="question6-option-four"
+										value="option-four"
+										label="Cannabis"
+										field={field}
+									/>
+									</div>
                             	</FormControl>
                         	<FormMessage/>
                     	</FormItem>
@@ -235,24 +285,32 @@ export default function Quiz() {
                         	<FormLabel>Question 7:</FormLabel>
                         	<FormDescription>When was the first drug invented?</FormDescription>
                             	<FormControl>
-									<RadioGroup onValueChange={field.onChange} value={field.value}>
-  										<div className="flex items-center space-x-2">
-    										<RadioGroupItem value="option-one" id="option-one" />
-    										<Label htmlFor="option-one">6th Century</Label>
-  										</div>
-  										<div className="flex items-center space-x-2">
-    										<RadioGroupItem value="option-two" id="option-two" />
-    										<Label htmlFor="option-two">10th Century</Label>
-  										</div>
-  										<div className="flex items-center space-x-2">
-    										<RadioGroupItem value="option-three" id="option-three" />
-    										<Label htmlFor="option-one">14th Century</Label>
-  										</div>
-  										<div className="flex items-center space-x-2">
-    										<RadioGroupItem value="option-four" id="option-four" />
-    										<Label htmlFor="option-one">There is no set date.</Label>
-  										</div>
-									</RadioGroup>
+								<div className="space-y-2">
+									<StarRadioButton
+										id="question7-option-one"
+										value="option-one"
+										label="6th Century"
+										field={field}
+									/>
+									<StarRadioButton
+										id="question7-option-two"
+										value="option-two"
+										label="10th Century"
+										field={field}
+									/>
+									<StarRadioButton
+										id="question7-option-three"
+										value="option-three"
+										label="14th Century"
+										field={field}
+									/>
+									<StarRadioButton
+										id="question7-option-four"
+										value="option-four"
+										label="There is no set date"
+										field={field}
+									/>
+									</div>
                             	</FormControl>
                         	<FormMessage/>
                     	</FormItem>
@@ -266,24 +324,32 @@ export default function Quiz() {
                         	<FormLabel>Question 8:</FormLabel>
                         	<FormDescription>What is the internal use of a drug without medical/health reasons?</FormDescription>
                             	<FormControl>
-									<RadioGroup onValueChange={field.onChange} value={field.value}>
-  										<div className="flex items-center space-x-2">
-    										<RadioGroupItem value="option-one" id="option-one" />
-    										<Label htmlFor="option-one">Drug Abuse</Label>
-  										</div>
-  										<div className="flex items-center space-x-2">
-    										<RadioGroupItem value="option-two" id="option-two" />
-    										<Label htmlFor="option-two">Drug Trafficking</Label>
-  										</div>
-  										<div className="flex items-center space-x-2">
-    										<RadioGroupItem value="option-three" id="option-three" />
-    										<Label htmlFor="option-one">Drug User</Label>
-  										</div>
-  										<div className="flex items-center space-x-2">
-    										<RadioGroupItem value="option-four" id="option-four" />
-    										<Label htmlFor="option-one">Drug Dealer</Label>
-  										</div>
-									</RadioGroup>
+								<div className="space-y-2">
+									<StarRadioButton
+										id="question8-option-one"
+										value="option-one"
+										label="Drug Abuse"
+										field={field}
+									/>
+									<StarRadioButton
+										id="question8-option-two"
+										value="option-two"
+										label="Drug Trafficking"
+										field={field}
+									/>
+									<StarRadioButton
+										id="question8-option-three"
+										value="option-three"
+										label="Drug User"
+										field={field}
+									/>
+									<StarRadioButton
+										id="question8-option-four"
+										value="option-four"
+										label="Drug Dealer"
+										field={field}
+									/>
+									</div>
                             	</FormControl>
                         	<FormMessage/>
                     	</FormItem>
