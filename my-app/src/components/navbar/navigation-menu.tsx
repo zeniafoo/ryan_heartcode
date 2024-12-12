@@ -27,36 +27,36 @@ export function NavigationBar() {
         <NavigationMenu
             className={`flex flex-row justify-between min-w-full list-none h-16 sticky top-0 p-5 shadow-md ${navBarBgColor} z-50`}
         >
-            <div className="flex flex-row">
-                <NavigationMenuItem>
+            <div className="flex flex-row ">
+                <NavigationMenuItem className="m-2">
                     <Link href="/" legacyBehavior passHref>
                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                             Home
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
+                <NavigationMenuItem className="m-2">
                     <Link href="/about-val" legacyBehavior passHref>
                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                             About val
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
+                <NavigationMenuItem className="m-2">
                     <Link href="/about-ryan" legacyBehavior passHref>
                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                             About ryan
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
+                <NavigationMenuItem className="m-2">
                     <Link href="/notes" legacyBehavior passHref>
                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                             Notes
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
-                <NavigationMenuItem>
+                <NavigationMenuItem className="m-2">
                     <Link href="/quiz" legacyBehavior passHref>
                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
                             Quiz
