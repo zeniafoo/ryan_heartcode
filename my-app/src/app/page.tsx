@@ -10,6 +10,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { motion as motionReact } from "motion/react";
 
 export default function Home() {
   return (
@@ -57,7 +58,7 @@ export default function Home() {
           All over the {" "}
           <span className="text-neutral-400">
             {"World".split("").map((word, idx) => (
-              <motion.span
+              <motionReact.span
                 key={idx}
                 className="inline-block"
                 initial={{ x: -10, opacity: 0 }}
@@ -65,7 +66,7 @@ export default function Home() {
                 transition={{ duration: 0.5, delay: idx * 0.04 }}
               >
                 {word}
-              </motion.span>
+              </motionReact.span>
             ))}
           </span>
         </p>
