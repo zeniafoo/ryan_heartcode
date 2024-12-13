@@ -10,32 +10,31 @@ import CloseIcon from "./CloseIcon"; // Adjust the path if necessary
 const cards = [
   {
     description: "",
-    title: "When was the first drug invented?",
-    src: "/goldmedal.jpg",
+    title: "Consequences of drug trafficking in Singapore?",
+    src: "/law.jpg",
     ctaText: "Expand Notes",
-    ctaLink: "https://ui.aceternity.com/templates",
-    content: () => <p>There is no set date for the invention of drugs.</p>,
+    ctaLink: "https://edition.cnn.com/2024/10/19/asia/singapore-changi-prison-drugs-war-intl-hnk-dst/index.html#:~:text=But%20Singapore%20imposes%20a%20mandatory,and%20500%20grams%20of%20cannabis.",
+    content: () => <p> Singapore imposes a mandatory death penalty for people convicted of supplying certain amounts of illicit drugs – 15 grams (half an ounce) of heroin, 30 grams of cocaine, 250 grams of methamphetamine and 500 grams of cannabis.</p>,
   },
   {
     description: "",
     title: "Drugs in cigarettes",
     src: "/cigarette.png",
     ctaText: "Expand Notes",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "https://www.lung.org/quit-smoking/smoking-facts/whats-in-a-cigarette",
     content: () => (
       <p>The drugs found in cigarettes are: nicotine, cannabis, and acetone.</p>
     ),
   },
   {
     description: "",
-    title: "Good and bad drugs",
-    src: "/angeldevil.png",
+    title: "What is the minimum amount of time needed for effective treatment for drug addiction",
+    src: "/doctor.jpg",
     ctaText: "Expand Notes",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "https://www.urmc.rochester.edu/encyclopedia/content?contenttypeid=40&contentid=DrugAbuseQuiz#:~:text=The%20length%20of%20time%20needed,addiction%20is%20a%20chronic%20disease.",
     content: () => (
       <p>
-        Good drugs include panadol and tylenol. Bad drugs include cocaine and
-        ketamine.
+        For most people, the least amount of time is 3 months
       </p>
     ),
   },
@@ -44,12 +43,12 @@ const cards = [
     title: "Time it takes for drug side effects to start",
     src: "/stopwatch.jpg",
     ctaText: "Expand Notes",
-    ctaLink: "https://ui.aceternity.com/templates",
+    ctaLink: "https://www.safemedication.com/pharmacist-insights/2021/04/26/are-you-experiencing-side-effects-from-your-medicine-heres-what-you-should-know#:~:text=Side%20effects%20can%20happen%20at,cause%20side%20effects%20as%20well.",
     content: () => (
       <p>
-        Side effects can happen within minutes after ingesting a drug. It can
-        also take hours or days depending on how long it takes for it to
-        metabolize in your body.
+        Side effects can happen at any time. They can occur when you first take a medicine, with changes in dosage, or if you stop taking the medicine suddenly or too soon. If you begin to take other prescriptions or non-prescription products, interactions among the medicines may cause side effects as well.
+
+
       </p>
     ),
   },

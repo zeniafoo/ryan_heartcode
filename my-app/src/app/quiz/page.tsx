@@ -38,12 +38,12 @@ const FormSchema = z.object({
 });
 
 const correctAnswers = {
-  question2: "no",
+  question2: "yes",
   question3: "option-one",
   question4: "option-one",
   question5: "option-one",
   question6: "option-one",
-  question7: "option-four",
+  question7: "option-one",
   question8: "option-one",
 };
 
@@ -150,7 +150,7 @@ export default function Quiz() {
 				return (
 				<FormItem>
 					<FormLabel>Question 2:</FormLabel>
-					<FormDescription>Do you sell drugs?</FormDescription>
+					<FormDescription>Can ex drug users have second chance in life?</FormDescription>
 					<Select onValueChange={field.onChange} defaultValue={field.value}>
 					<FormControl>
 						<SelectTrigger>
@@ -185,11 +185,14 @@ export default function Quiz() {
           render={({ field }) => (
             <FormItem>
               <FormLabel>Question 3:</FormLabel>
-              <FormDescription>Are there good drugs and bad drugs?</FormDescription>
+              <FormDescription>What is the minimum amount of time needed for effective treatment for drug addiciton?</FormDescription>
               <FormControl>
                 <div className="space-y-2">
-                  <StarRadioButton id="question3-option-one" value="option-one" label="Yes" field={field} />
-                  <StarRadioButton id="question3-option-two" value="option-two" label="No" field={field} />
+                  <StarRadioButton id="question3-option-one" value="option-one" label="at least 3 months" field={field} />
+                  <StarRadioButton id="question3-option-two" value="option-two" label="at least 1 month" field={field} />
+				  <StarRadioButton id="question3-option-three" value="option-three" label="at least 8 months" field={field} />
+				  <StarRadioButton id="question3-option-four" value="option-four" label="at least 1 year" field={field} />
+
                 </div>
               </FormControl>
               <FormMessage />
@@ -265,13 +268,13 @@ export default function Quiz() {
           render={({ field }) => (
             <FormItem>
               <FormLabel>Question 7:</FormLabel>
-              <FormDescription>When was the first drug invented?</FormDescription>
+              <FormDescription>Has drug abuse in Singapore grown since 2022?</FormDescription>
               <FormControl>
                 <div className="space-y-2">
-                  <StarRadioButton id="question7-option-one" value="option-one" label="6th Century" field={field} />
-                  <StarRadioButton id="question7-option-two" value="option-two" label="10th Century" field={field} />
-                  <StarRadioButton id="question7-option-three" value="option-three" label="14th Century" field={field} />
-                  <StarRadioButton id="question7-option-four" value="option-four" label="There is no set date" field={field} />
+                  <StarRadioButton id="question7-option-one" value="option-one" label="Yes" field={field} />
+                  <StarRadioButton id="question7-option-two" value="option-two" label="No" field={field} />
+                  <StarRadioButton id="question7-option-three" value="option-three" label="it increased then decreased" field={field} />
+                  <StarRadioButton id="question7-option-four" value="option-four" label="it decreased then increased" field={field} />
                 </div>
               </FormControl>
               <FormMessage />
@@ -286,7 +289,7 @@ export default function Quiz() {
           render={({ field }) => (
             <FormItem>
               <FormLabel>Question 8:</FormLabel>
-              <FormDescription>What is the internal use of a drug without medical/health reasons?</FormDescription>
+              <FormDescription>What is the internal use of a drug called without medical/health reasons?</FormDescription>
               <FormControl>
                 <div className="space-y-2">
                   <StarRadioButton id="question8-option-one" value="option-one" label="Drug Abuse" field={field} />
