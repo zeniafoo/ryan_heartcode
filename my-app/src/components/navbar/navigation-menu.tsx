@@ -38,14 +38,14 @@ export function NavigationBar() {
                 <NavigationMenuItem className="m-2">
                     <Link href="/about-val" legacyBehavior passHref>
                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            About val
+                            About Valerie
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
                 <NavigationMenuItem className="m-2">
                     <Link href="/about-ryan" legacyBehavior passHref>
                         <NavigationMenuLink className={navigationMenuTriggerStyle()}>
-                            About ryan
+                            About Ryan
                         </NavigationMenuLink>
                     </Link>
                 </NavigationMenuItem>
